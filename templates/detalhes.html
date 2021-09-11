@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block page_content %}
+<h1>{{ produto.nome }}</h1>
+<div class="row">
+ <div class="col-md-8">
+ <img class="card-img-top" src="{{ produtos.image.url }}" >
+ </div>
+ <div class="col-md-4">
+ <h5>Produto</h5>
+ <p>{{ produtos.nome }}</p>
+ <br>
+ 
+
+ <div class="d-flex justify-content-center">
+                           
+<a href="{% url 'addCart' produtos.pk  %}" class="btn btn-primary">Comprar</a>
+
+</div>
+
+ </div>
+</div>
+{% endblock %}
