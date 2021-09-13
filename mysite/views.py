@@ -157,6 +157,10 @@ def enviar(request):
     output.append(dados.pedido)
     output.append(dados.valor)
   output.append("Total: R$"+ somar)
+  #print(output)
+  #print('\n'.join(map(str, output)))
+  #formata a saída sem aspas
+  output='\n'.join(map(str, output))
   del request.session['chave']        
   return HttpResponseRedirect("https://api.whatsapp.com/send?phone=" + "55"+"91983185630" + "&text=" + str(output),"_blank")
 
