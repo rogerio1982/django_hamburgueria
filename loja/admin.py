@@ -21,4 +21,4 @@ class PersonAdmin(admin.ModelAdmin):
 class PersonAdmin(admin.ModelAdmin):
     list_display = ("pedido", "nome","pagamento","endereco")
     list_filter = ("pedido", )
-    search_fields = ("pedido__startswith", )
+    search_fields = ("nome__startswith", )
