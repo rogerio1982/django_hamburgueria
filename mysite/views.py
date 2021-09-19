@@ -8,7 +8,7 @@ from django.utils.formats import localize
 
 
 def home(request):
- produtos = Produtos.objects.all()
+ produtos = Produtos.objects.filter(promocao=0)
  
  if not request.session.get('chave'):
    string.ascii_lowercase # abcdefghijklmnopqrstuvwxyz

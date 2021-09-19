@@ -4,7 +4,9 @@ from django.db import models
 class Produtos(models.Model):
  nome = models.CharField(max_length=100)
  descricao = models.TextField(max_length=100)
+ qtd = models.IntegerField(default=0)
  valor = models.CharField(max_length=20)
+ promocao = models.CharField(max_length=20,default=0)
  image = models.FileField(upload_to ='static/',blank=True)
 
 

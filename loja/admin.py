@@ -7,7 +7,7 @@ from .models import *
 
 @admin.register(Produtos)
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ("nome", "descricao","valor","image")
+    list_display = ("id","nome", "descricao","qtd","valor","promocao","image")
     list_filter = ("valor", )
     search_fields = ("nome__startswith", )
 
