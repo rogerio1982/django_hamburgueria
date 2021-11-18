@@ -47,15 +47,15 @@ def addCart(request,pk):
 
  somar =  Carrinho.objects.filter(chave=cha).aggregate(Sum('valor'))
  somar = somar.get('valor__sum')
-
+ produtos = Produtos.objects.filter(promocao=0)
  context = {
  'carrinho': carrinhos,
  'msg':'Inserido com sucesso!',
  'total':total,
- 'somar':somar
-
+ 'somar':somar,
+ 'produtos': produtos,
  }
- return render(request, 'carrinho.html', context)
+ return redirect('home')# render(request, 'index.html', context)
 
 def verCar(request):
  cha = request.session['chave']
